@@ -1,8 +1,4 @@
 @charset "UTF-8";
-
-
-
-
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -79,6 +75,7 @@
     background-color: #495057;  
     color: var(--bs-light);
   }
+  
 
 
 /* btn voltar */
@@ -97,6 +94,7 @@ a{
       padding-bottom: 1.5rem;
       border: none;
       transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+      left: 93%;
     }
 }
 *,
