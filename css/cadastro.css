@@ -1,4 +1,6 @@
 @charset "UFT-8";
+
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -72,17 +74,17 @@
 
   /* navbar */
   nav{
-    background-color: #495057;  
+    background-color: var(--bs-gray-900);  
     color: var(--bs-light);
   }
 
 
 /* btn voltar */
 a{
-    max-width: 1140px;
+    max-width: 1140px; 
     display: flex;
-    color: var(--bs-yellow);
     margin-left: auto !important;
+    color: var(--bs-indigo);
 }
 
 
@@ -93,6 +95,7 @@ a{
       padding-bottom: 1.5rem;
       border: none;
       transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+      left: 93%;
     }
 }
 *,
@@ -112,16 +115,16 @@ body {
     height: 100vh;
     margin: 0;
     color: #fff;
-    background-image: url('../assets/img/about/fundo_escola.jpg');
+    background-image: url('../assets/img/team/cdst.avif');
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: center center;
+    background-position: center center; 
     background-size: cover;
 }
 
 /* msg ja tem uma conta? */
 h6{
-    color: #000;
+    color: #ffffff;
 }
 
 /* Btn entrar */
@@ -135,16 +138,16 @@ h6{
 
 /* box */
 .container {
-    background-color: #ffffff;
+    background-color: #0f0f0f;
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 13px;
+    box-shadow: var(--bs-indigo);
     width: 300px;
 }
 /* cor do h2 da box */
 .container h2 {
     margin-bottom: 20px;
-    color: #000000;
+    color: var(--bs-indigo);
 }
 
 .container input, .container select, .container button {
@@ -159,7 +162,7 @@ h6{
 
 .container button {
     background-color: #5004b5;
-    color: #fff;
+    color: #ffffff;
     border: none;
     cursor: pointer;
 }
@@ -191,4 +194,7 @@ h6{
     border-radius: 10px;
 }
 
-
+.form-group{
+    margin-bottom: 1rem;
+    line-height: 1px;
+}
