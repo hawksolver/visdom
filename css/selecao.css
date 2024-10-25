@@ -50,7 +50,7 @@
     --bs-body-font-family: Roboto Slab, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 400;
-    --bs-body-line-height: 1.5;
+    --bs-body-line-height: 2.5;
     --bs-body-color: #212529;
     --bs-body-bg: #fff;
     --bs-border-width: 1px;
@@ -76,6 +76,11 @@
     color: var(--bs-light);
   }
   
+  .btn-primary{
+    color: #000;
+    background-color: #5004b5;
+    border-color: #000;
+  }
 
 
 /* btn voltar */
@@ -119,6 +124,7 @@ body {
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    line-height: 2.5;
 }
 
 /* icons */
@@ -150,6 +156,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 300px;
+    line-height: 2.7;
 }
 /* cor do h2 da box */
 .container h2 {
