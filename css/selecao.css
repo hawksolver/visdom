@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
     --bs-blue: #0d6efd;
-    --bs-indigo: #6610f2;
+    --bs-indigo: #5004b5;
     --bs-purple: #6f42c1;
     --bs-pink: #d63384;
     --bs-red: #dc3545;
@@ -78,7 +78,7 @@
   
   .btn-primary{
     color: #000;
-    background-color: #5004b5;
+    background-color: var(--bs-indigo);
     border-color: #000;
   }
 
@@ -87,7 +87,7 @@
 a{
     max-width: 1140px;
     display: flex;
-    color: var(--bs-yellow);
+    color: #5004b5;
     margin-left: auto !important;
 }
 
