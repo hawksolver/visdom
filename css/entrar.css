@@ -82,7 +82,7 @@
 a{
     max-width: 1140px;
     display: flex;
-    color: var(--bs-yellow);
+    color: var(--bs-purple);
     margin-left: auto !important;
 }
 
