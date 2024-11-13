@@ -23,8 +23,54 @@
                 <h1>Nome do Usuário</h1>
                 <p>Descrição do usuário...</p> 
             <button class="editar-btn">Editar Perfil</button> 
-            <button class="btn btn-primary">criar grupo</button>
+            <button class="btn btn-primary criargrupoform">criar grupo</button>
         </div> 
+
+                <!-- Script para integração com Parse (Back4App) -->
+                <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
+                <script>
+                    // Inicializar Parse com as credenciais Back4App
+                    Parse.initialize("njNAqSQm1Bg0LoKu45fURFLlsIPwJ6TFxaCpGLh7", "RLCspUJ0lSNK8XFYr3r0gU4qyGhQuEkFg81tRZjk");
+                    Parse.serverURL = 'https://parseapi.back4app.com/';
+        
+                    document.getElementById('criargrupoform').addEventListener('submit', async function (e) {
+                        e.preventDefault();
+        
+                        // Coletar dados do formulário
+                        const nome = document.getElementById('nome').value;
+                        const email = document.getElementById('email').value;
+                        const senha = document.getElementById('senha').value;
+                        const telefone = document.getElementById('Telefone').value;
+        
+                        // Verificar campos obrigatórios
+                        if (!nome || !email || !senha || !telefone) {
+                            alert('Por favor, preencha todos os campos!');
+                            return;
+                        }
+        
+                        try {
+                            // Criar novo usuário usando Parse
+                            const user = new Parse.User();
+                            user.set("username", email);  // Definir email como nome de usuário (obrigatório para Parse)
+                            user.set("password", senha);
+                            user.set("email", email);
+                            user.set("nome", nome);
+                            user.set("Telefone", telefone);
+        
+                            // Realizar cadastro
+                            const newUser = await user.signUp();
+                            console.log("Aluno cadastrado com sucesso:", newUser);
+        
+                            alert('Usuário cadastrado com sucesso!');
+                            document.getElementById('cadastroUsuarioForm').reset();  // Limpar formulário após cadastro
+        
+                        } catch (error) {
+                            console.error('Erro ao cadastrar usuário:', error);
+                            alert('Erro ao cadastrar usuário: ' + error.message);
+                        }
+                    });
+                </script>
+            </div>
     </body>
 
 

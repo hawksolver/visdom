@@ -82,8 +82,10 @@
 a{
     max-width: 1140px;
     display: flex;
-    color: var(--bs-purple);
+    color: var(--bs-gray-100);
     margin-left: auto !important;
+    
+    
 }
 
 
