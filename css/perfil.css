@@ -10,19 +10,32 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
-
 :root {
-    --bs-blue: #0d6efd;
-    --bs-indigo: #2f2444;
-    --bs-purple: #5004b5;
- 
-  }
+  --bs-blue: #0d6efd;
+  --bs-indigo: #5004b5;
+  --bs-purple: #6a27e6;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc800;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-fundo: #000;
+  --bs-body: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 
 
   body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bs-body) ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,10 +44,10 @@
 }
 
 .perfil-container {
-    background-color: #fff;
+    background-color: var(--bs-body);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 500px; /* Aumenta a largura */
     height: 800px; /* Aumenta a altura */
