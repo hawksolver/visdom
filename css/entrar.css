@@ -68,117 +68,91 @@
     --bs-code-color: #d63384;
     --bs-highlight-bg: #fff4cc;
     --bs-navbar-color: #5004b5;
-  }
-
-  /* navbar */
-  nav{
-    background-color: #495057;  
-    color: var(--bs-light);
-  }
-  
-
-
-/* btn voltar */
-a{
-    max-width: 1140px;
-    display: flex;
-    color: var(--bs-gray-100);
-    margin-left: auto !important;
-    
-    
 }
 
+/* navbar */
+nav {
+  background-color: #495057;  
+  color: var(--bs-light);
+}
 
-/* cabeça */
+a {
+  max-width: 1140px;
+  display: flex;
+  color: var(--bs-gray-100);
+  margin-left: auto !important;
+}
+
 @media (min-width: 992px) {
-    #mainNav {
+  #mainNav {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
       border: none;
       transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
       left: 93%;
-    }
+  }
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
 
 body {
-    /* imagem de fundo e corpo */
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: #fff;
-    background-image: url('../assets/img/team/cdst.avif');
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+  background-image: url('../assets/img/team/cdst.avif');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
 }
 
-/* icons */
 .text-primary {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+}
 
+.container a {
+  color: white;
+  background-color: #5004b5;
+  border-radius: 10px;
+  width: 100%;
+}
 
-/* Btn entrar */
- .container a{
-    color: white;
-    background-color: #5004b5;
-    border-radius: 10px;
-    width: 100%;
- }
-
-
-/* box */
 .container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 300px;
-}
-/* cor do h2 da box */
-.container h2 {
-    margin-bottom: 20px;
-    color: #000000;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 300px;
 }
 
-.container input, .container select, .container button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    background-color: #292929;
-    color: #fff;
+.container h2 {
+  margin-bottom: 20px;
+  color: #5004b5;
+}
+
+.container input,
+.container select,
+.container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #292929;
+  color: #fff;
 }
 
 .container button {
-    background-color: #5004b5;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  background-color: #5004b5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 .container button:hover {
-    background-color: #5004b5;
-    border: #000000;
+  background-color: #5004b5;
+  border: #000000;
 }
-
-

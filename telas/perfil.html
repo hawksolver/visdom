@@ -12,38 +12,19 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="../css/perfil.css" rel="stylesheet" />
-    <style>
-        .perfil-container {
-            position: relative;
-            text-align: center;
-        }
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-        .avatar:hover {
-            opacity: 0.7;
-        }
-        .file-input {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="perfil-container">
         <form id="uploadForm">
             <label for="file-input">
-                <img src="../assets/img/team/mondongo.jpg" alt="Avatar do Usuário" class="avatar" id="avatar">
+                <img src="../assets/img/team/user.webp" alt="Avatar do Usuário" class="avatar" id="avatar">
             </label>
             <input id="file-input" type="file" class="file-input" accept="image/*"/>
         </form>
         <h1 class="nome-usuario" id="username">Nome a Usuário</h1>
-        <p>Descrição do usuário...</p>
-        <button class="editar-btn">Editar Perfil</button>
-        <button class="editar-btn criargrupoform">Crie seu Grupo</button>
+        <textarea id="user-description" class="form-control" rows="3" placeholder="Digite sua descrição aqui..."></textarea>
+        <button class="editar-btn" id="save-profile">Salvar Perfil</button>
+        <a href="grupos.html" class="enter-btn">Entre em um grupo</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -59,6 +40,10 @@
             var currentUser = Parse.User.current();
             if (currentUser) {
                 document.getElementById('username').innerText = currentUser.getUsername(); // Supondo que o nome de usuário está salvo como 'username'
+                var profilePicUrl = currentUser.get("profilePic");
+                var userDescription = currentUser.get("description");
+                document.getElementById('avatar').src = profilePicUrl;
+                document.getElementById('user-description').value = userDescription;
             } else {
                 console.error("Nenhum usuário logado.");
             }
@@ -84,6 +69,19 @@
                     document.getElementById('avatar').src = user.get("profilePic");
                 }, function(error) {
                     console.error("Erro ao atualizar a foto do perfil:", error);
+                });
+            }
+        };
+
+        document.getElementById('save-profile').onclick = function() {
+            var currentUser = Parse.User.current();
+            if (currentUser) {
+                var userDescription = document.getElementById('user-description').value;
+                currentUser.set("description", userDescription);
+                currentUser.save().then(function() {
+                    alert("Perfil salvo com sucesso!");
+                }, function(error) {
+                    console.error("Erro ao salvar o perfil:", error);
                 });
             }
         };

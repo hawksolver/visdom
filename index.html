@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 <div class="portofolio-item">
-                    <a class="navbar-brand portofolio-link" href="./telas/perfil.html" data-bs-toggle="modal">
+                    <a class="navbar-brand portofolio-link"  id="avatar"  href="./telas/perfil.html" data-bs-toggle="modal">
                         <img class="portofolio-link" src="./assets/img/team/user.webp" alt="..." />
                     </a>
                 </div>
@@ -38,6 +38,7 @@
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Projetos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Criadores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Avalie-nos</a></li>
                     </ul>
                 </div>
             </div>
@@ -262,26 +263,57 @@
                 </div>
             </div>
         </section>
-        <!-- Agenda -->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Avalie o nosso Site</h2>
-                </div>
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
+        <!-- Contato -->
+            <section class="page-section" id="contact">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Avalie o nosso Site</h2>
+                    </div>
+                    <form id="contactForm">
                         <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Enviar msg-->
-                                <textarea class="form-control" id="message" placeholder="De seu repertório" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required"></div>
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control" id="name" name="from_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="from_email" required>
                             </div>
                         </div>
-                    </div>
+                        <div class="row align-items-stretch mb-5">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-textarea mb-md-0">
+                                    <!-- Enviar msg-->
+                                    <textarea class="form-control" id="message" name="message" placeholder="De seu repertório" required></textarea>
+                                    <div class="invalid-feedback">Por favor, digite uma mensagem.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Avaliar</button></div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </section>
+        
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            <script>
+                // Inicializar EmailJS com a chave pública
+                emailjs.init("GRpvt54ee9apPUOm9");
+        
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    emailjs.sendForm('service_bd4fu2b', 'template_de5nbng', this)
+                        .then(function() {
+                            alert('Mensagem enviada com sucesso!');
+                        }, function(error) {
+                            console.error('Erro ao enviar mensagem:', error);
+                        });
+                });
+            </script>
                     <!-- Sucesso ao enviar agnd -->
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Seu repertóri foi salvo. Obrigado!</div>
+                            <div class="fw-bolder">Seu repertório foi salvo. Obrigado!</div>
                             <br />
                             <a href="https://www.instagram.com/sam.psz/">https://www.instagram.com/sam.psz/</a>
                         </div>
@@ -289,7 +321,7 @@
                     <!-- Informações sobre Salvar msg -->
                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao Salvar Agenda</div></div>
                     <!-- BTN Salvar Agnd -->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Avaliar</button></div>
+           
                 </form>
                 <!-- Fim -->
             </div>
@@ -516,5 +548,22 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script>
+        Parse.initialize("njNAqSQm1Bg0LoKu45fURFLlsIPwJ6TFxaCpGLh7", "RLCspUJ0lSNK8XFYr3r0gU4qyGhQuEkFg81tRZjk");
+        Parse.serverURL = 'https://parseapi.back4app.com/';
+
+        function loadUserProfilePic() {
+            var currentUser = Parse.User.current();
+            if (currentUser) {
+                var profilePicUrl = currentUser.get("profilePic");
+                document.getElementById('avatar').src = profilePicUrl;
+            } else {
+                console.error("Nenhum usuário logado.");
+            }
+        }
+
+        // Carregar a imagem de perfil ao carregar a página
+        window.onload = loadUserProfilePic;
+    </script>
     </body>
 </html>
