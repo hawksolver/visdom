@@ -44,20 +44,32 @@
 }
 
 .perfil-container {
+    position: relative;
+    text-align: center;
     background-color: var(--bs-body);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 500px; /* Aumenta a largura */
-    height: 800px; /* Aumenta a altura */
+    width: 350px; /* Aumenta a largura */
+    height: 550px; /* Aumenta a altura */
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
     margin-top: 30px; /* Espaçamento adicional para o avatar */
+}
+
+  .avatar:hover{
+  opacity: 0.7;
+}
+
+.file-input {
+  display: none;
 }
 
 .editar-btn {
@@ -72,4 +84,14 @@
 
 .editar-btn:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 576px) {
+  .perfil-container {
+      padding: 10px;
+  }
+  .avatar {
+      width: 100px;
+      height: 100px;
+  }
 }

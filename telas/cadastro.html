@@ -45,7 +45,7 @@
                 <input type="password" class="form-control" id="senha" name="senha" required placeholder="Crie uma senha segura">
             </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
-            <h6>Já tem uma conta??</h6>
+            <h6>Já tem uma conta?</h6>
             <a href="./entrar.html" class="btn">Entrar</a>
         </form>
 
@@ -72,6 +72,8 @@
                 }
 
                 try {
+                    // Deslogar usuário atual para limpar qualquer sessão inválida
+                    await Parse.User.logOut();
 
                     // Criar novo usuário usando Parse
                     const user = new Parse.User();
@@ -83,10 +85,10 @@
 
                     // Realizar cadastro
                     const newUser = await user.signUp();
-                    console.log("Aluno cadastrado com sucesso:", newUser);
+                    console.log("Usuário cadastrado com sucesso:", newUser);
 
                     alert('Usuário cadastrado com sucesso!');
-                    document.getElementById('cadastroUsuarioForm').reset();  // Limpar formulário após cadastro
+                    window.location.href = 'perfil.html'; // Redirecionar para a página de perfil após cadastro
 
                 } catch (error) {
                     console.error('Erro ao cadastrar usuário:', error);
