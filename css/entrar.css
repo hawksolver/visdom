@@ -71,12 +71,21 @@
 }
 
 /* navbar */
-nav {
-  background-color: #495057;  
-  color: var(--bs-light);
+
+
+button, input{
+  border: #000;
+  border-radius: 0.5rem;
+  background-color: #000;
+}
+
+label{
+  background-color: #000;
 }
 
 a {
+  justify-content: center;
+  align-items: center;
   max-width: 1140px;
   display: flex;
   color: var(--bs-gray-100);

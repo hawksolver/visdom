@@ -38,6 +38,10 @@
         // Função para carregar o nome do usuário
         function loadUserData() {
             var currentUser = Parse.User.current();
+
+            //Localhost if else verificando se o currentUser está logado
+            
+
             if (currentUser) {
                 document.getElementById('username').innerText = currentUser.getUsername(); // Supondo que o nome de usuário está salvo como 'username'
                 var profilePicUrl = currentUser.get("profilePic");
