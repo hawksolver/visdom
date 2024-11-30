@@ -8,9 +8,9 @@
     <title>Visdom</title>
     <!-- Icon abelha -->
     <link rel="icon" type="image/x-icon" href="assets/abelha.jpeg" />
-    <!-- Fonte para icon-->
+    <!-- Fonte para icon -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- fonte do Google -->
+    <!-- Fonte do Google -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Importação para CSS -->
@@ -29,25 +29,22 @@
                 <li class="nav-item"><a class="nav-link" href="../index.html">Início</a></li>
                 <li class="nav-item"><a class="nav-link" href="../telas/perfil.html">Perfil</a></li>
                 <li class="nav-item"><a class="nav-link" href="../index.html">Contato</a></li>
-                </ul>
-            </div>
+            </ul>
         </div>
     </nav>
 
     <div class="container">
         <h2>Login</h2>
-        <div class="form-group">
-            <label for="email">Email</label>
+        <form class="form-group">
             <input type="email" id="email" placeholder="exemple@gmail.com" required>
-        </div>
-        <div class="form-group">
-
-            <label for="password">Senha</label>
+        </form>
+        <form class="form-group">
             <input type="password" id="password" placeholder="Senha" required>
-        </div>
-            <button type="submit" id="submit">Entrar</button>
-            <div class="account-message"></div>
-    </div>
+        </form>
+        <button type="submit" id="submit">Entrar</button>
+        <div class="account-message"></div>
+        <h6>Não tem uma conta? <a class="btn" href="cadastro.html">Cadastre-se</a></h6>
+    </form>
 
     <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
     <script>
