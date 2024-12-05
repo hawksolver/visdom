@@ -14,13 +14,8 @@
   --bs-blue: #0d6efd;
   --bs-indigo: #5004b5;
   --bs-purple: #6a27e6;
-  --bs-pink: #d63384;
+  --bs-dark: #343a40;
   --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc800;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
   --bs-fundo: #000;
   --bs-body: #fff;
 }
@@ -29,6 +24,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.navbar{
+  background-color: var(--bs-dark);
+}
+a{
+  color: var(--bs-body);
+}
+a:hover{
+  color: var(--bs-indigo);
 }
 
 .form-control{
@@ -61,11 +66,11 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 450px; /* Aumenta a largura */
-    height: 750px; /* Aumenta a altura */
+    height: 640px; /* Aumenta a altura */
 }
 
 .avatar {
-  width: 150px;
+  width: 166px;
   height: 150px;
   border-radius: 50%;
   cursor: pointer;
@@ -113,7 +118,7 @@ h1{
   margin-top: 20px;
 }
 .logout-btn {
-  background-color: var(--header-color);
+  background-color: var(--bs-purple);
   color: white;
   border: none;
   padding: 10px;
@@ -122,13 +127,12 @@ h1{
   margin-top: 20px;
 }
 
-
 @media (max-width: 576px) {
   .perfil-container {
       padding: 10px;
   }
   .avatar {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
   }
 }
